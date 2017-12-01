@@ -86,4 +86,58 @@ svg {
 img {
   max-width: 100%;
   height: auto;
+
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header"
+  "section"
+  "aside"
+  "footer";
+
+  grid-template-rows: 1fr 10fr 1fr 1fr;
+
+  height: 80vh;
+}
+
+.container > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 30px;
+  line-height: 1;
+  background-color: saddlebrown;
+}
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+}
+
+section {
+  grid-area: section;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (min-width: 400px) {
+  .container {
+    grid-template-areas:
+    "header section"
+    "aside section"
+    "aside footer";
+
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 6fr;
+  }
 }
